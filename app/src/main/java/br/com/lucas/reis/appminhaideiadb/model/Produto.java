@@ -2,6 +2,9 @@ package br.com.lucas.reis.appminhaideiadb.model;
 
 import android.util.Log;
 
+import br.com.lucas.reis.appminhaideiadb.api.AppUtil;
+import br.com.lucas.reis.appminhaideiadb.controller.ICrud;
+
 public class Produto implements ICrud{
 
     private static final String TAG = "Crud";
@@ -37,14 +40,14 @@ public class Produto implements ICrud{
     @Override
     public void deletar() {
 
-        Log.i(TAG, "deletar: Produto");
+        Log.i(AppUtil.TAG, "deletar: Produto");
 
     }
 
     @Override
     public void listar() {
 
-        Log.i(TAG, "listar: Produtos");
+        Log.i(AppUtil.TAG, "listar: Produtos");
 
     }
 }

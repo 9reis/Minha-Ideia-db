@@ -2,7 +2,8 @@ package br.com.lucas.reis.appminhaideiadb.model;
 
 import android.util.Log;
 
-import professor.marcomaddo.aulanivelamentointerface.ICrud;
+import br.com.lucas.reis.appminhaideiadb.api.AppUtil;
+import br.com.lucas.reis.appminhaideiadb.controller.ICrud;
 
 public class Cliente implements ICrud {
 
@@ -29,27 +30,27 @@ public class Cliente implements ICrud {
     @Override
     public void incluir() {
 
-        Log.i(TAG, "incluir: Cliente nome: "+getNome());
+        Log.i(AppUtil.TAG, "incluir: Cliente nome: "+getNome());
         
     }
 
     @Override
     public void alterar() {
 
-        Log.i(TAG, "alterar: Cliente");
+        Log.i(AppUtil.TAG, "alterar: Cliente");
 
     }
 
     @Override
     public void deletar() {
 
-        Log.i(TAG, "deletar: Cliente");
+        Log.i(AppUtil.TAG, "deletar: Cliente");
 
     }
 
     @Override
     public void listar() {
-        Log.i(TAG, "listar: Clientes");
+        Log.i(AppUtil.TAG, "listar: Clientes");
 
     }
 }
