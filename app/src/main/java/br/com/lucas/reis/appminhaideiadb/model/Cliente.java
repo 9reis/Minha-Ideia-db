@@ -7,7 +7,7 @@ import br.com.lucas.reis.appminhaideiadb.controller.ICrud;
 
 public class Cliente implements ICrud {
 
-    private static final String TAG = "Crud";
+    private int id; // Chave primária no banco
     private String nome;
     private String email;
 
@@ -25,6 +25,14 @@ public class Cliente implements ICrud {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
