@@ -20,13 +20,20 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto>{
 
     @Override
     public boolean incluir(Produto obj) {
-
+        dadoDoObj = new ContentValues();
+        //dadoDoObj.put(ProdutoDataModel.ID,obj.getId());
+        dadoDoObj.put(ProdutoDataModel.NOME,obj.getNome());
+        dadoDoObj.put(ProdutoDataModel.FORNECEDOR,obj.getFornecedor());
         return true;
     }
 
     @Override
     public boolean alterar(Produto obj) {
 
+        dadoDoObj = new ContentValues();
+        dadoDoObj.put(ProdutoDataModel.ID,obj.getId());
+        dadoDoObj.put(ProdutoDataModel.NOME,obj.getNome());
+        dadoDoObj.put(ProdutoDataModel.FORNECEDOR,obj.getFornecedor());
 
         return true;
 
@@ -34,7 +41,8 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto>{
 
     @Override
     public boolean deletar(Produto obj) {
-
+        dadoDoObj = new ContentValues();
+        dadoDoObj.put(ProdutoDataModel.ID,obj.getId());
         return true;
 
     }
