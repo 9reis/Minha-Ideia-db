@@ -1,20 +1,22 @@
 package br.com.lucas.reis.appminhaideiadb.controller;
 
-public interface ICrud {
+import java.util.List;
+
+public interface ICrud<T> {
 
     // Métodos para persistência de dados no Banco de Dados
 
     // Incluir
-    public void incluir();
+    public boolean incluir(T obj);
 
     // Alterar
-    public void alterar();
+    public boolean alterar(T obj);
 
     // Deletar
-    public void deletar();
+    public boolean deletar(T obj);
 
     // Listar
-    public void listar();
+    public List<T> listar();
 
 
     // CRUD - Create Retrieve Update Delete

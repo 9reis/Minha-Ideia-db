@@ -5,9 +5,9 @@ import android.util.Log;
 import br.com.lucas.reis.appminhaideiadb.api.AppUtil;
 import br.com.lucas.reis.appminhaideiadb.controller.ICrud;
 
-public class Produto implements ICrud{
+public class Produto{
 
-    private static final String TAG = "Crud";
+    private int id;
     private String nome;
     private String fornecedor;
 
@@ -27,27 +27,11 @@ public class Produto implements ICrud{
         this.fornecedor = fornecedor;
     }
 
-    @Override
-    public void incluir() {
-
+    public int getId() {
+        return id;
     }
 
-    @Override
-    public void alterar() {
-
-    }
-
-    @Override
-    public void deletar() {
-
-        Log.i(AppUtil.TAG, "deletar: Produto");
-
-    }
-
-    @Override
-    public void listar() {
-
-        Log.i(AppUtil.TAG, "listar: Produtos");
-
+    public void setId(int id) {
+        this.id = id;
     }
 }
