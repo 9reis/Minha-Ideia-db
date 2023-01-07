@@ -36,7 +36,7 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente> {
         // Utilizando um metodo capaz de add o OBJ no banco
         // tabela Cliente
 
-        return true;
+        return insert(ClienteDataModel.TABELA, dadoDoObj);
     }
 
     @Override

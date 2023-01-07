@@ -24,9 +24,9 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto>{
         //dadoDoObj.put(ProdutoDataModel.ID,obj.getId());
         dadoDoObj.put(ProdutoDataModel.NOME,obj.getNome());
         dadoDoObj.put(ProdutoDataModel.FORNECEDOR,obj.getFornecedor());
-        return true;
+        return insert(ProdutoDataModel.TABELA, dadoDoObj);
     }
-
+    
     @Override
     public boolean alterar(Produto obj) {
 

@@ -1,5 +1,6 @@
 package br.com.lucas.reis.appminhaideiadb.datasource;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -35,7 +36,11 @@ public class AppDataBase extends SQLiteOpenHelper{
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {}
 
+    public boolean insert(String tabela, ContentValues dados ){
+        boolean retorno = false;
+
+        return retorno;
     }
 }
