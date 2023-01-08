@@ -61,5 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi alterado!");
         }
+
+        for (Cliente obj: clienteController.listar()){
+            Log.i(AppUtil.TAG, "CLiente: "+obj.getId()+" "+obj.getNome() +" "+obj.getEmail());
+        }
     }
 }
