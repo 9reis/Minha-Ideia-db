@@ -6,6 +6,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.lucas.reis.appminhaideiadb.datamodel.ClienteDataModel;
 import br.com.lucas.reis.appminhaideiadb.datamodel.ProdutoDataModel;
 import br.com.lucas.reis.appminhaideiadb.datasource.AppDataBase;
 import br.com.lucas.reis.appminhaideiadb.model.Produto;
@@ -41,9 +42,7 @@ public class ProdutoController extends AppDataBase implements ICrud<Produto>{
 
     @Override
     public boolean deletar(int id) {
-       
-        return true;
-
+        return deleteById(ProdutoDataModel.TABELA,id);
     }
 
     @Override

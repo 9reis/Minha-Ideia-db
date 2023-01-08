@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         clienteController = new ClienteController(getApplicationContext());
 
         objCliente = new Cliente();
-        objCliente.setId(2);
-//      objCliente.setNome("Lucas Reis");
-//      objCliente.setEmail("teste@teste.com");
+        objCliente.setNome("Pedro Oliveira");
+        objCliente.setEmail("Pedro@teste.com");
+        objCliente.setId(3);
 //
 //        if(clienteController.incluir(objCliente)){
 //            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi incluido com sucesso!",
@@ -42,14 +42,24 @@ public class MainActivity extends AppCompatActivity {
 //            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi incluido!");
 //        }
 
-        if(clienteController.deletar(objCliente.getId())){
-            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi ixcluido com sucesso!",
+//        if(clienteController.deletar(objCliente.getId())){
+//            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi ixcluido com sucesso!",
+//                    Toast.LENGTH_SHORT).show();
+//            Log.i(AppUtil.TAG, "Cliente "+objCliente.getNome()+" foi excluido com sucesso!");
+//        }else{
+//            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" não foi excluido!",
+//                    Toast.LENGTH_SHORT).show();
+//            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi excluido!");
+//        }
+
+        if(clienteController.alterar(objCliente)){
+            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi alterado com sucesso!",
                     Toast.LENGTH_SHORT).show();
-            Log.i(AppUtil.TAG, "Cliente "+objCliente.getNome()+" foi excluido com sucesso!");
+            Log.i(AppUtil.TAG, "Cliente "+objCliente.getNome()+" foi alterado com sucesso!");
         }else{
-            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" não foi excluido!",
+            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" não foi alterado!",
                     Toast.LENGTH_SHORT).show();
-            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi excluido!");
+            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi alterado!");
         }
     }
 }
