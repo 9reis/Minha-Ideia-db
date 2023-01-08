@@ -25,20 +25,31 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(AppUtil.TAG, "onCreate: APP MINHA IDEIA DATABASE");
 
-        objCliente = new Cliente();
-        objCliente.setNome("Lucas Reis");
-        objCliente.setEmail("teste@teste.com");
-
         clienteController = new ClienteController(getApplicationContext());
 
-        if(clienteController.incluir(objCliente)){
-            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi incluido com sucesso!",
+        objCliente = new Cliente();
+        objCliente.setId(2);
+//      objCliente.setNome("Lucas Reis");
+//      objCliente.setEmail("teste@teste.com");
+//
+//        if(clienteController.incluir(objCliente)){
+//            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi incluido com sucesso!",
+//                    Toast.LENGTH_SHORT).show();
+//            Log.i(AppUtil.TAG, "Cliente "+objCliente.getNome()+" foi incluido com sucesso!");
+//        }else{
+//            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" não foi incluido!",
+//                    Toast.LENGTH_SHORT).show();
+//            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi incluido!");
+//        }
+
+        if(clienteController.deletar(objCliente.getId())){
+            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi ixcluido com sucesso!",
                     Toast.LENGTH_SHORT).show();
-            Log.i(AppUtil.TAG, "Cliente "+objCliente.getNome()+" foi incluido com sucesso!");
+            Log.i(AppUtil.TAG, "Cliente "+objCliente.getNome()+" foi excluido com sucesso!");
         }else{
-            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" não foi incluido!",
+            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" não foi excluido!",
                     Toast.LENGTH_SHORT).show();
-            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi incluido!");
+            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi excluido!");
         }
     }
 }

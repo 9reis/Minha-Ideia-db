@@ -44,11 +44,26 @@ public class AppDataBase extends SQLiteOpenHelper{
 
         boolean retorno = false;
 
-        // Regra de negócio
         try{
             retorno = db.insert(tabela, null, dados) > 0;
         }catch (Exception e){
             Log.d(AppUtil.TAG, "insert: "+ e.getMessage());
+        }
+
+        return retorno;
+    }
+
+    public boolean deleteById (String tabela, int id ){
+
+        db = getWritableDatabase();
+
+        boolean retorno = false;
+
+        try{
+            retorno = db.delete(tabela, "id = ?",
+                    new String[] {String.valueOf(id)}) > 0;
+        }catch (Exception e){
+            Log.d(AppUtil.TAG, "delete: "+ e.getMessage());
         }
 
         return retorno;
