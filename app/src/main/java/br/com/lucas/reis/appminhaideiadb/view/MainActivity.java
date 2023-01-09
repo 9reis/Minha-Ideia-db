@@ -27,10 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         clienteController = new ClienteController(getApplicationContext());
 
-        objCliente = new Cliente();
-        objCliente.setNome("Pedro Oliveira");
-        objCliente.setEmail("Pedro@teste.com");
-        objCliente.setId(3);
+//        for(int i =0; i<10; i++){
+//            objCliente = new Cliente();
+//            objCliente.setNome("Teste testando"+i);
+//            objCliente.setEmail("teste@testando.com");
+//            clienteController.incluir(objCliente);
+//        }
 //
 //        if(clienteController.incluir(objCliente)){
 //            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi incluido com sucesso!",
@@ -52,18 +54,18 @@ public class MainActivity extends AppCompatActivity {
 //            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi excluido!");
 //        }
 
-        if(clienteController.alterar(objCliente)){
-            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi alterado com sucesso!",
-                    Toast.LENGTH_SHORT).show();
-            Log.i(AppUtil.TAG, "Cliente "+objCliente.getNome()+" foi alterado com sucesso!");
-        }else{
-            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" não foi alterado!",
-                    Toast.LENGTH_SHORT).show();
-            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi alterado!");
-        }
+//        if(clienteController.alterar(objCliente)){
+//            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" foi alterado com sucesso!",
+//                    Toast.LENGTH_SHORT).show();
+//            Log.i(AppUtil.TAG, "Cliente "+objCliente.getNome()+" foi alterado com sucesso!");
+//        }else{
+//            Toast.makeText(MainActivity.this, "Cliente "+objCliente.getNome()+" não foi alterado!",
+//                    Toast.LENGTH_SHORT).show();
+//            Log.e(AppUtil.TAG, "Cliente "+objCliente.getNome()+" não foi alterado!");
+//        }
 
-        for (Cliente obj: clienteController.listar()){
-            Log.i(AppUtil.TAG, "CLiente: "+obj.getId()+" "+obj.getNome() +" "+obj.getEmail());
+        for(Cliente obj : clienteController.listar()){
+            Log.d(AppUtil.TAG, "Cliente: "+obj.getId()+" - "+obj.getNome()+" - "+obj.getEmail());
         }
     }
 }

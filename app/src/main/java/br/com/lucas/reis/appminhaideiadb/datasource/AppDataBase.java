@@ -1,14 +1,20 @@
 package br.com.lucas.reis.appminhaideiadb.datasource;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.lucas.reis.appminhaideiadb.api.AppUtil;
 import br.com.lucas.reis.appminhaideiadb.datamodel.ClienteDataModel;
 import br.com.lucas.reis.appminhaideiadb.datamodel.ProdutoDataModel;
+import br.com.lucas.reis.appminhaideiadb.model.Cliente;
 
 public class AppDataBase extends SQLiteOpenHelper{
 
@@ -53,6 +59,35 @@ public class AppDataBase extends SQLiteOpenHelper{
         return retorno;
     }
 
+    @SuppressLint({"Recycle", "Range"})
+    public List<Cliente> getAllClientes(String tabela){
+
+        db = getWritableDatabase();
+
+        List<Cliente> clientes = new ArrayList<>();
+        Cliente obj;
+
+        String sql = "SELECT * FROM "+tabela;
+
+        Cursor cursor;
+
+        cursor = db.rawQuery(sql, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                obj = new Cliente();
+                obj.setId(cursor.getInt(cursor.getColumnIndex(ClienteDataModel.ID)));
+                obj.setNome(cursor.getString(cursor.getColumnIndex(ClienteDataModel.NOME)));
+                obj.setEmail(cursor.getString(cursor.getColumnIndex(ClienteDataModel.EMAIL)));
+                clientes.add(obj);
+
+                Log.i(AppUtil.TAG, "Cliente: "+obj.getNome());
+
+            }while(cursor.moveToNext());
+        }
+        return clientes;
+    }
+
     public boolean update(String tabela, ContentValues dados ){
 
         db = getWritableDatabase();
@@ -84,6 +119,4 @@ public class AppDataBase extends SQLiteOpenHelper{
 
         return retorno;
     }
-
-
 }
